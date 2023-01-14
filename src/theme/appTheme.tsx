@@ -7,8 +7,38 @@ export const styles = StyleSheet.create({
         backgroundColor: 'black',
         flex: 1,
     },
-    text: {
+    calculatorContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        padding: 15,
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 18,
+        paddingHorizontal: 10, 
+    },
+    result: {
         color: 'white',
-        fontSize: 20
+        fontSize: 60,
+        textAlign: "right",
+    },
+    littleResult: {
+        color: 'rgba(255,255,255,0.5)',
+        fontSize: 25,
+        textAlign: "right",
+    },
+    button: {
+        borderRadius: 100,
+        height: 80,
+        justifyContent: 'center',
+        marginHorizontal: 10,
+        width: 80,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 25,
+        fontWeight: '400',
+        textAlign: 'center',
     }
 })
