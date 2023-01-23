@@ -12,6 +12,8 @@ interface Props {
 export const ButtonCalc = ( { text, buttonColor = "#2D2D2D", expand = false, action }: Props ) => {
   return (
     <TouchableOpacity
+        delayPressIn={0}
+        activeOpacity={0.75}
         onPress={ () => action( text ) }
     >
         <View style={{ 

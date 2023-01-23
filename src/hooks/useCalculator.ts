@@ -11,8 +11,8 @@ export const useCalculator = () => {
     const lastOperator = useRef<Operators>()
 
     const clear = () => {
-        setNumber('0')
-        setLastNumber('0')
+        setNumber( number => '0')
+        setLastNumber( lastNumber => '0')
     }
 
     const buildNumber = ( digit: string ) => {
@@ -21,18 +21,18 @@ export const useCalculator = () => {
 
         if( number.startsWith('0') || number.startsWith('-0') ){
             if( digit === '.' ){
-                setNumber( number + digit )
+                setNumber( number => number + digit )
             }else if( digit === '0' && number.includes('.')){
-                setNumber( number + digit )
+                setNumber( number => number + digit )
             }else if( digit !== '0' && !number.includes('.')){
-                setNumber( digit )
+                setNumber( number => digit )
             }else if( digit === '0' && !number.includes('.') ){
-                setNumber( number )
+                setNumber( number => number )
             }else{
-                setNumber( number + digit )
+                setNumber( number => number + digit )
             }
         }else{
-            setNumber( number + digit )
+            setNumber( number => number + digit )
         }
 
     }
@@ -47,9 +47,9 @@ export const useCalculator = () => {
         }
 
         if( temNumber.length == 1 ){
-            setNumber('0')
+            setNumber( number => '0')
         }else{
-            setNumber( negative + temNumber.slice(0, -1) )
+            setNumber( number => negative + temNumber.slice(0, -1) )
         }
     }
 
